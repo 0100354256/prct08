@@ -6,7 +6,6 @@ require 'matriz'
 describe Matriz do
   before :each do
     @m1 = Matriz.new([[1, 1], [2, 2], [3, 3], [4, 4]])
-    @m2 = Matriz.new([[1, 2, 3],[4, 5, 6],[7 ,8, 9]])
   end    
 
   describe "Testeando Matriz" do
@@ -18,6 +17,11 @@ describe Matriz do
     end
     it "Columnas" do
       @m1.columnas.should eq(2)
+    end
+      
+    it "Modificando Valor y comprobando" do
+     @m1[1, 1] = 5
+     @m1.to_s.should eq("[[1, 1][2, 5][3, 3][4, 4]]")
     end
   end
 end

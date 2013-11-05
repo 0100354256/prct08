@@ -1,6 +1,6 @@
 class Matriz
-  include Comparable
-  include Enumerable
+#   include Comparable
+#   include Enumerable
   attr_reader :filas, :columnas, :matriz
   
   def initialize(m)
@@ -24,4 +24,14 @@ class Matriz
     end
     aux << "]"
   end
+  
+  def [](fila, columna)
+   @matriz[fila][columna]
+  end
+
+  def []=(fila, columna, valor)
+   @matriz[fila][columna] = valor
+  end
+
+  
 end
