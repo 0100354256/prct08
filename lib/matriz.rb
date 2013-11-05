@@ -1,4 +1,5 @@
 class Matriz
+  include Comparable
   include Enumerable
   attr_reader :filas, :columnas, :matriz
   
@@ -6,5 +7,21 @@ class Matriz
     @filas = m.size
     @columnas = m[0].size
     @matriz = m;
+  end
+
+  def to_s
+    aux = "["
+    for i in 0...@filas do
+      aux << "["
+      for j in 0...@columnas do
+        if (j == @columnas-1)
+          aux << "#{matriz[i][j]}"
+        else
+          aux << "#{matriz[i][j]}, "
+        end
+      end
+      aux << "]"
+    end
+    aux << "]"
   end
 end
